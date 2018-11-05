@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="MainPresenter"
+            type="com.sand_corporation.www.mvvmdatabindingwithlivedataretrofit.MainActivity.MainPresenter.MainPresenter"/>
+    
+        <variable
+            name="MainViewModel"
+            type="com.sand_corporation.www.mvvmdatabindingwithlivedataretrofit.MainActivity.MainViewModel.MainViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity.MainActivity">
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{MainViewModel.observableData}"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="GET DATA"
+            android:onClick="@{(v)-> MainPresenter.getData()}"/>
+
+    </LinearLayout>
+</layout>

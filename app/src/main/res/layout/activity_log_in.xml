@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="LogInPresenter"
+            type="com.sand_corporation.www.mvvmdatabindingwithlivedataretrofit.LogInActivity.LogInPresenter.LogInPresenter"/>
+
+        <variable
+            name="LogInViewModel"
+            type="com.sand_corporation.www.mvvmdatabindingwithlivedataretrofit.LogInActivity.LogInViewModel.LogInViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LogInActivity.LogInActivity">
+
+        <EditText
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:hint="Enter user name"
+            android:text="@={LogInViewModel.userName}"/>
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:hint="Enter password"
+            android:text="@={LogInViewModel.userPassword}"/>
+
+        <Button
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textSize="16sp"
+            android:onClick="@{(v)-> LogInPresenter.sendLogInCredentials()}"/>
+
+    </LinearLayout>
+
+</layout>
